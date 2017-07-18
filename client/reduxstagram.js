@@ -6,5 +6,19 @@ import { render } from 'react-dom';
 import css from './styles/style.styl';
 
 import Main from './component/Main.js';
+import Single from './component/Single.js';
+import PhotoGrid from './component/PhotoGrid.js';
 
-render(<Main/>, document.getElementById('root'));
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+
+
+const router = (
+  <Router history={browserHistory}>
+    <Route path="/" component={Main}>
+      <IndexRoute component={PhotoGrid}></IndexRoute>
+      <Route path="/view/:postId" component={Single}></Route>
+    </Route>
+  </Router>
+)
+
+render(router, document.getElementById('root'));
