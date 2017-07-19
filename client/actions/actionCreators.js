@@ -13,6 +13,7 @@ function addComment(postID, author, comment) {
     postID: postID,
     author: author,
     comment: comment
+  }
 }
 
 // remove comment
